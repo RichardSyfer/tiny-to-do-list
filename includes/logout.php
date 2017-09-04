@@ -1,7 +1,7 @@
-<?php 
-require_once '/../core/init.php';
+<?php
+require_once __DIR__ . '/../core/init.php';
 
 $user = new User();
 $user->logout();
 
-Redirect::to('/../index.php');
+Redirect::to('/index.php');

@@ -1,8 +1,8 @@
 <?php
-require_once 'core/init.php';
+require_once __DIR__ . 'core/init.php';
 
 if(Session::exists('home')) {
-	echo Session::flash('home');
+    echo Session::flash('home');
 } else {
-	echo 'somsing wrong';
+    echo 'something wrong';
 }
