@@ -24,17 +24,17 @@
 $patternList = '/^[\d\w\sа-яА-ЯЁё!?@#№$%&.,:\'\'\"\"-]{3,250}$/';
 $patternTask = '/^[\d\w\sа-яА-ЯЁё!?@#№$%&.,:\'\'\"\"-]{3,1000}$/';
 
- spl_autoload_register(function($class) {
- 	require_once '/../classes/' . $class . '.php';
- });
+spl_autoload_register(function($class) {
+    require_once __DIR__ . '/../classes/' . $class . '.php';
+});
 
- require_once '/../functions/sanitize.php';
+require_once __DIR__ . '/../functions/sanitize.php';
 
- if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_userId'))) {
-  $hash = Cookie::get(Config::get('remember/cookie_name'));
-  $hashCheck = DB::getInstance()->get('users_session', ['hash', '=', $hash]);
-  if($hashCheck->count()) {
-    $user = new User($hashCheck->first()->user_id);
-    $user->login();
-  }
- }
+if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_userId'))) {
+    $hash = Cookie::get(Config::get('remember/cookie_name'));
+    $hashCheck = DB::getInstance()->get('users_session', ['hash', '=', $hash]);
+    if($hashCheck->count()) {
+        $user = new User($hashCheck->first()->user_id);
+        $user->login();
+    }
+}

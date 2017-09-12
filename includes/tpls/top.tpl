@@ -23,8 +23,8 @@
 
 	<style> body { opacity: 0; overflow-x: hidden; } html { background-color: #257C90; } </style>
 
-	</head>
+</head>
 <body>
-	<div class="preloader"><div class="pulse"></div></div>
+<div class="preloader"><div class="pulse"></div></div>
 <div class="page-wrapper">
-	<div class="content-wrapper"> 
+	<div class="content-wrapper">
